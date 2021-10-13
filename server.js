@@ -78,8 +78,14 @@ app.post('/api/login', (req, res) => {
   }
 });
 
-app.post('/api/logout', authenticator, (req, res) => {
-  req.loggedIn = false;
+// app.post('/api/logout', authenticator, (req, res) => {
+//   req.loggedIn = false;
+//   res.status(200).json({
+//     payload: token
+//   });
+// });
+app.post("/api/logout", (req, res) => {
+  //remove token from database
   res.status(200).json({
     payload: token
   });
